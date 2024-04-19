@@ -31,4 +31,4 @@ cat $RESULT/hypo.tok.sys | $SCRIPTS/recaser/detruecase.perl | $SCRIPTS/tokenizer
 
 #(9) Automatic Evaluation
 # Score the test set with sacrebleu
-sacrebleu $RESULT/hypo.sys --language-pair ${SRC}-${TRG} --reference en-as-test-$TRG.txt > $RESULT/sacrebleu.sys
+sacrebleu --tok=13a $RESULT/hypo.sys < en-as-test-$TRG.txt > $RESULT/sacrebleu.sys
