@@ -31,5 +31,5 @@ cat $RESULT/hypo.tok.sys | $SCRIPTS/recaser/detruecase.perl | $SCRIPTS/tokenizer
 
 #(9) Automatic Evaluation
 echo "Score the test set with sacrebleu"
-sacrebleu --tok=13a $RESULT/hypo.sys en-as-test-$TRG.txt > $RESULT/sacrebleu.sys
+sacrebleu --tok=13a  en-as-test-$TRG.txt < $RESULT/hypo.sys
 
